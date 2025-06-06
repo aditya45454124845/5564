@@ -54,8 +54,8 @@ fi\n\
 \n\
 # Create disk image if not exists\n\
 if [ ! -f "/data/disk.qcow2" ]; then\n\
-  echo "💽 Creating 102GB virtual disk..."\n\
-  qemu-img create -f qcow2 "/data/disk.qcow2" 200G\n\
+  echo "💽 Creating 250GB virtual disk..."\n\
+  qemu-img create -f qcow2 "/data/disk.qcow2" 250G\n\
 fi\n\
 \n\
 # Windows-specific boot parameters\n\
