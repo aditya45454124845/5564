@@ -36,14 +36,14 @@ if [ -e /dev/kvm ]; then\n\
   echo "✅ KVM acceleration available"\n\
   KVM_ARG="-enable-kvm"\n\
   CPU_ARG="host"\n\
-  MEMORY="8G"\n\
-  SMP_CORES=0\n\
+  MEMORY="16G"\n\
+  SMP_CORES=6\n\
 else\n\
   echo "⚠️  KVM not available - using slower emulation mode"\n\
   KVM_ARG=""\n\
   CPU_ARG="qemu64"\n\
   MEMORY="8G"\n\
-  SMP_CORES=2\n\
+  SMP_CORES=6\n\
 fi\n\
 \n\
 # Download ISO if needed\n\
@@ -54,8 +54,8 @@ fi\n\
 \n\
 # Create disk image if not exists\n\
 if [ ! -f "/data/disk.qcow2" ]; then\n\
-  echo "💽 Creating 250GB virtual disk..."\n\
-  qemu-img create -f qcow2 "/data/disk.qcow2" 250G\n\
+  echo "💽 Creating 60GB virtual disk..."\n\
+  qemu-img create -f qcow2 "/data/disk.qcow2" 60G\n\
 fi\n\
 \n\
 # Windows-specific boot parameters\n\
